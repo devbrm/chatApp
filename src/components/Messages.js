@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import { firebaseDB } from "../library/firebase";
 import { AppContext } from "../App";
 import Message from "./Message";
+import validInput from "../library/validInput";
 
 function Messages(props) {
   const [message, setMessage] = useState("");
@@ -50,7 +51,7 @@ function Messages(props) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key !== "Enter" || !message.trim().length) return;
+    if (e.key !== "Enter" || !validInput(message) || !message.length) return;
 
     e.preventDefault();
     roomRef.push({
@@ -63,7 +64,7 @@ function Messages(props) {
   const handleNewMessage = (e) => {
     e.preventDefault();
 
-    if (!message.trim().length) return;
+    if (!validInput(message) || !message.length) return;
 
     roomRef.push({
       message: message.trim(),
