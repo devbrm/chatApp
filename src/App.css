@@ -24,7 +24,6 @@ input {
   outline: none;
   border-radius: 3px;
   font-size: 1rem;
-  font-weight: 100;
   padding: 0 5px;
   -webkit-transition: 0.1s ease-out;
   transition: 0.1s ease-out;
@@ -58,7 +57,6 @@ button {
   transition-property: -webkit-box-shadow, -webkit-filter, -webkit-transform;
   transition-property: box-shadow, filter, transform;
   transition-property: box-shadow, filter, transform, -webkit-box-shadow, -webkit-filter, -webkit-transform;
-  font-weight: 100;
   cursor: pointer;
 }
 
@@ -356,7 +354,6 @@ button:hover {
 }
 
 .chatContainer form input {
-  font-weight: 100;
   height: auto;
   padding: 1rem;
   font-size: 1rem;

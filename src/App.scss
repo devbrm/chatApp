@@ -25,7 +25,6 @@ input {
   outline: none;
   border-radius: 3px;
   font-size: 1rem;
-  font-weight: 100;
   padding: 0 5px;
   transition: 0.1s ease-out;
   transition-property: box-shadow, filter;
@@ -47,7 +46,6 @@ button {
   padding: 0.5rem 1rem;
   transition: 0.1s ease-out;
   transition-property: box-shadow, filter, transform;
-  font-weight: 100;
   cursor: pointer;
 
   &:hover {
@@ -269,7 +267,6 @@ button {
     padding: 1rem 0.5rem;
 
     input {
-      font-weight: 100;
       height: auto;
       padding: 1rem;
       font-size: 1rem;
