@@ -326,7 +326,7 @@ button:hover {
 }
 
 .chatContainer .messages div [data-is-big="true"] {
-  border-radius: 7%;
+  border-radius: 10px;
 }
 
 .chatContainer .messages div.userMessages {

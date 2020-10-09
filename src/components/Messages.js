@@ -42,7 +42,7 @@ function Messages(props) {
   useEffect(() => {
     if (messagesRef.current.lastChild)
       messagesRef.current.lastChild.scrollIntoView();
-  });
+  }, [data]);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -50,7 +50,7 @@ function Messages(props) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key !== "Enter") return;
+    if (e.key !== "Enter" || !message.trim().length) return;
 
     e.preventDefault();
     roomRef.push({
@@ -62,6 +62,8 @@ function Messages(props) {
 
   const handleNewMessage = (e) => {
     e.preventDefault();
+
+    if (!message.trim().length) return;
 
     roomRef.push({
       message: message.trim(),
