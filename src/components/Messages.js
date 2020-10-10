@@ -58,10 +58,7 @@ function Messages(props) {
     roomRef.push({
       message: message.trim(),
       userName,
-      timeStamp:
-        Timestamp.now().toDate().toLocaleTimeString() +
-        "  " +
-        Timestamp.now().toDate().toLocaleDateString(),
+      timeStamp: Timestamp.now(),
     });
     setMessage("");
   };

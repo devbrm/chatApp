@@ -240,6 +240,14 @@ button {
         background: #59438a;
         padding: 0.7rem 1rem;
         border-radius: 100px;
+        white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: pre-wrap; /* css-3 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+        white-space: -webkit-pre-wrap; /* Newer versions of Chrome/Safari*/
+        word-break: break-all;
+        white-space: normal;
       }
       & [data-is-big="true"] {
         border-radius: 10px;
@@ -256,7 +264,7 @@ button {
       }
 
       .timeStamp {
-        font-size: .5rem;
+        font-size: 0.5rem;
         font-weight: 400;
         color: #ffffff30;
         transition: 0.1s cubic-bezier(0.29, 0.98, 1, 1);
@@ -264,7 +272,7 @@ button {
 
         &:hover {
           color: #fff;
-          font-size: .51rem;
+          font-size: 0.51rem;
         }
       }
     }
