@@ -337,6 +337,12 @@ button:hover {
   background: #4060bf;
 }
 
+.chatContainer .messages div .timeStamp {
+  font-size: .6rem;
+  font-weight: 400;
+  color: #ffffff7a;
+}
+
 .chatContainer form {
   display: -webkit-box;
   display: -ms-flexbox;

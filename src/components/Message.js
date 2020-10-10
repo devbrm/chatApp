@@ -13,6 +13,7 @@ function Message(props) {
       >
         {item.message}
       </p>
+      <div className="timeStamp">{item.timeStamp}</div>
     </div>
   );
 }

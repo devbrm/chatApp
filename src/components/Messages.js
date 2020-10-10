@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext, useRef } from "react";
-import { firebaseDB } from "../library/firebase";
+import firebase, { firebaseDB } from "../library/firebase";
 import { AppContext } from "../App";
 import Message from "./Message";
 import validInput from "../library/validInput";
@@ -9,6 +9,7 @@ function Messages(props) {
   const [data, setData] = useState([]);
   const { userName } = useContext(AppContext);
   const { room } = props;
+  const { Timestamp } = firebase.firestore;
   const messagesRef = useRef(null);
   const roomRef = firebaseDB.ref("chat-rooms/" + room);
 
@@ -57,6 +58,10 @@ function Messages(props) {
     roomRef.push({
       message: message.trim(),
       userName,
+      timeStamp:
+        Timestamp.now().toDate().toLocaleTimeString() +
+        "  " +
+        Timestamp.now().toDate().toLocaleDateString(),
     });
     setMessage("");
   };
