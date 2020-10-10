@@ -338,9 +338,18 @@ button:hover {
 }
 
 .chatContainer .messages div .timeStamp {
-  font-size: .6rem;
+  font-size: .5rem;
   font-weight: 400;
-  color: #ffffff7a;
+  color: #ffffff30;
+  -webkit-transition: 0.1s cubic-bezier(0.29, 0.98, 1, 1);
+  transition: 0.1s cubic-bezier(0.29, 0.98, 1, 1);
+  -webkit-transition-property: color, font-size;
+  transition-property: color, font-size;
+}
+
+.chatContainer .messages div .timeStamp:hover {
+  color: #fff;
+  font-size: .51rem;
 }
 
 .chatContainer form {

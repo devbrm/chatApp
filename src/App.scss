@@ -256,9 +256,16 @@ button {
       }
 
       .timeStamp {
-        font-size: .6rem;
+        font-size: .5rem;
         font-weight: 400;
-        color: #ffffff7a;
+        color: #ffffff30;
+        transition: 0.1s cubic-bezier(0.29, 0.98, 1, 1);
+        transition-property: color, font-size;
+
+        &:hover {
+          color: #fff;
+          font-size: .51rem;
+        }
       }
     }
   }
