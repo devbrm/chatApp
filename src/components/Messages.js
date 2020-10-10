@@ -71,6 +71,7 @@ function Messages(props) {
     roomRef.push({
       message: message.trim(),
       userName,
+      timeStamp: Timestamp.now(),
     });
     setMessage("");
   };
@@ -90,7 +91,12 @@ function Messages(props) {
           value={message}
           placeholder="Aa"
         ></input>
-        <button onClick={handleNewMessage}>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleNewMessage(e);
+          }}
+        >
           <i className="fas fa-2x fa-paper-plane"></i>
         </button>
       </form>

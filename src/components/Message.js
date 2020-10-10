@@ -4,8 +4,15 @@ import firebase from "../library/firebase";
 function Message(props) {
   const { item, userName } = props;
   const { Timestamp } = firebase.firestore;
-  const { seconds, nanoseconds } = item.timeStamp;
-  const currentTime = new Timestamp(seconds, nanoseconds).toDate();
+  let currentTime;
+
+  if (!item.timeStamp) currentTime = false;
+  else {
+    currentTime = new Timestamp(
+      item.timeStamp.seconds,
+      item.timeStamp.nanoseconds
+    ).toDate();
+  }
 
   return (
     <div className={item.userName === userName ? "userMessages" : ""}>
@@ -18,9 +25,11 @@ function Message(props) {
         {item.message}
       </p>
       <div className="timeStamp">
-        {currentTime.toLocaleTimeString() +
-          "  " +
-          currentTime.toLocaleDateString()}
+        {currentTime
+          ? currentTime.toLocaleTimeString() +
+            "  " +
+            currentTime.toLocaleDateString()
+          : "no date"}
       </div>
     </div>
   );
